@@ -55,7 +55,7 @@ class InteractiveRecord
   
   def self.find_by(attribute)
    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.key.first} = ?"
-   DB[:conn].execute("SELECT last_insert_rowid #{self.table_name} FROM ")[0][0]
+   DB[:conn].execute(sql, attribute)
   
   end
 end
