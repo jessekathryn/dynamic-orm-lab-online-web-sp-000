@@ -53,7 +53,7 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(name, grade)
+  def self.find_by(name)
    student = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND grade = ?", name, grade)
  end
 end
