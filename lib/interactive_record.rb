@@ -54,7 +54,7 @@ class InteractiveRecord
   end
   
   def self.find_by(name)
-   
+   DB[:conn].execute("SELECT last_insert_rowid() FROM ")[0][0]
    DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND grade = ?", name, grade)
   end
 end
